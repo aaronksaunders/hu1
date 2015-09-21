@@ -45,7 +45,7 @@ Now that the `app.js` file is created, we need to include the `app.js` file in t
 <script src="app.js"></script>
 ````
 
-### Final Source of working application
+Final Source of working application
 ==
 `index.html`
 ````HTML
