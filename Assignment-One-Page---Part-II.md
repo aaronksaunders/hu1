@@ -24,22 +24,53 @@ To get the `index.html` page to recognize the controller, we will add an attribu
 </html>
 ````
 
-This includes the default `css` for ionic framework and the `ionic.bundle.js` is a bundle of all of the files you need to build a basic Ionic Framework application using the angularJS framework. 
+### Step Two: Modify `app.js` to include the controller of the application. 
 
-REMEMEBER: there is no need to include angularjs in your application
+The `controller` contains the business logic, variable and data that pertains to the `$scope` of the element that the `controller` was assigned to.
 
-### Step Two: Create `app.js` and add the following code
+Since the `angular.module` returns an object, we can add the controller to the module that is returned using this syntax.
 
 ````Javascript
 // this will be the javascript file to hold
 // all of the code for my first app
 // create the angular module
-angular.module('firstApp',['ionic']);
+angular.module('firstApp',['ionic'])
+.controller('FirstController', function($scope) {
+});
 ````
-The code above creates the angular JS module that the application's code will be included in. Notice the name `firstApp`, that is the name of the module that must be included in the `index.html` file with the `ng-app` attribute.. Quick refresher
+Notice the removal of the semi-colon at the end of the angular.module and the period added to the start of the `controller` definition.
+
+The code above creates the angular JS module that the application's code will be included in; and then adds an angular `controller` named `FirstController` to the angularJS application `firstApp`.
+
+### Step Three: Modify `app.js` to include a $scope variable in the newly created controller 
+
+the `$scope` is provided to the controller for assigning objects and functions that can be accessible in the view, or `html` page associated with the specific `controller`. 
+
+To add a variable do the following
+````Javascript
+$scope.myName = "Aaron Saunders"
+````
+Since remember that this is javascript and we can create javascript object using JSON format, we can also do the following to create a `$scope` variable `fullName` with a proper `first` and `last`.
+````Javascript
+$scope.fullName = {
+   "first" : "Aaron",
+   "last"  : "Saunders"
+};
+````
+Now that we have created the `$scope` variables, let add them to in the view.
+
+### Step Four: Modify `index.html` to show the value of the $scope variable
+
+When including the `$scope` variables in the page, there is no need to include `$scope` just include the name of the variable enclosed in the angulars brackets `{{}}` which tell angular to evaluate the contents of the brackets. In the code below I added the lines to display the variable created in the controller
 
 ````HTML
-<html ng-app="firstApp" >
+<body ng-controller="FirstController"> <!-- ADDED ATTRIBUTE HERE -->
+   <p>this should display Aaron Saunders -   {{ name }}</p>
+   <p>
+   this should display Aaron -   {{ fullName.first }} <br/>
+   this should display Saunders -   {{ fullName.last }}
+   </p>
+</body>
 ````
 
 Now that the `app.js` file is created, we need to include the `app.js` file in the `index.html` file. This is accomplished by using the HTML script tag. Make the following edits to your `index.html` file, add this code right below the existing `script` tag that is in the `index.html` `<head>` tag.
