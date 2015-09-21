@@ -46,7 +46,7 @@ Now that the `app.js` file is created, we need to include the `app.js` file in t
 ````
 
 ### Final Source of working application
-
+==
 `index.html`
 ````HTML
 <!DOCTYPE html>
