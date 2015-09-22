@@ -1,4 +1,4 @@
-#### This was an in class assignment to add a controller and $scope variables to basic application.
+## This was an in class assignment to add a controller and $scope variables to basic application.
 
 When the assignment is completed, you will have a basic application with a single view and a single controller. This is part two of the assignment, please see [Part One]() before going forward.
 
