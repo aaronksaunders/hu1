@@ -23,7 +23,7 @@ In part three, we will add a Ionic Framwork UI components and styles to applicat
 </html>
 ````
 
-### Step One: Modify `index.html` to `ion-content`
+### Step Two: Modify `index.html` to `ion-content`
 ````HTML
 <body ng-controller="FirstController">
    <!-- add some ionic style with header -->
@@ -36,11 +36,12 @@ In part three, we will add a Ionic Framwork UI components and styles to applicat
        <p>
        this should display Aaron -   {{ fullName.first }} <br/>
        this should display Saunders -   {{ fullName.last }}
-   </p>
+      </p>
    </ion-content>
 </body>
 </html>
 ````
+When you refresh your page in the browers, your browser should look similar to the image below
 
 ### Step Two: Modify `app.js` to include the controller of the application. 
 
@@ -125,11 +126,18 @@ Final Source of Working Application
     <script src="app.js"></script>
 </head>
 <body ng-controller="FirstController"> <!-- ADDED ATTRIBUTE HERE -->
-   <p>this should display Aaron Saunders -   {{ myName }}</p>
-   <p>
-   this should display Aaron -   {{ fullName.first }} <br/>
-   this should display Saunders -   {{ fullName.last }}
-   </p>
+   <!-- add some ionic style with header -->
+   <ion-header-bar class="bar-royal">
+        <h1 class="title">Home Page Title</h1>
+   </ion-header-bar>
+   <!-- ionic content area -->
+   <ion-content class="padding">
+       <p>this should display Aaron Saunders -   {{ myName }}</p>
+       <p>
+       this should display Aaron -   {{ fullName.first }} <br/>
+       this should display Saunders -   {{ fullName.last }}
+      </p>
+   </ion-content>
 </body>
 </html>
 ````
