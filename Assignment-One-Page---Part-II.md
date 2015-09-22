@@ -44,6 +44,11 @@ The code above creates the angular JS module that the application's code will be
 
 ### Step Three: Modify `app.js` to include a $scope variable in the newly created controller 
 
+````Javascript
+.controller('FirstController', function($scope) {
+/* BODY OF CONTROLLER - ADD CODE HERE */
+});
+````
 the `$scope` is provided to the controller for assigning objects and functions that can be accessible in the view, or `html` page associated with the specific `controller`. 
 
 To add a variable do the following
@@ -57,6 +62,19 @@ $scope.fullName = {
    "last"  : "Saunders"
 };
 ````
+The completed controller should look like this
+````Javascript
+.controller('FirstController', function($scope) {
+/* BODY OF CONTROLLER - ADD CODE HERE */
+
+   $scope.myName = "Aaron Saunders"
+
+   $scope.fullName = {
+      "first" : "Aaron",
+      "last"  : "Saunders"
+   };
+});
+````
 Now that we have created the `$scope` variables, let add them to in the view.
 
 ### Step Four: Modify `index.html` to show the value of the $scope variable
@@ -65,7 +83,7 @@ When including the `$scope` variables in the page, there is no need to include `
 
 ````HTML
 <body ng-controller="FirstController"> <!-- ADDED ATTRIBUTE HERE -->
-   <p>this should display Aaron Saunders -   {{ name }}</p>
+   <p>this should display Aaron Saunders -   {{ myName }}</p>
    <p>
    this should display Aaron -   {{ fullName.first }} <br/>
    this should display Saunders -   {{ fullName.last }}
@@ -89,7 +107,7 @@ Final Source of Working Application
     <script src="app.js"></script>
 </head>
 <body ng-controller="FirstController"> <!-- ADDED ATTRIBUTE HERE -->
-   <p>this should display Aaron Saunders -   {{ name }}</p>
+   <p>this should display Aaron Saunders -   {{ myName }}</p>
    <p>
    this should display Aaron -   {{ fullName.first }} <br/>
    this should display Saunders -   {{ fullName.last }}
@@ -103,5 +121,15 @@ Final Source of Working Application
 // this will be the javascript file to hold
 // all of the code for my first app
 // create the angular module
-angular.module('firstApp',['ionic']);
+angular.module('firstApp',['ionic'])
+.controller('FirstController', function($scope) {
+  /* BODY OF CONTROLLER - ADD CODE HERE */
+
+   $scope.myName = "Aaron Saunders"
+
+   $scope.fullName = {
+      "first" : "Aaron",
+      "last"  : "Saunders"
+   };
+});
 ````
