@@ -1,4 +1,4 @@
-# This was an in class assignment to create a basic ionic framework application.
+### This was an in class assignment to create a basic ionic framework application.
 
 When the assignment is completed, you will have a basic application with a single view and a single controller.
 
