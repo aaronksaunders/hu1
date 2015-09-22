@@ -1,4 +1,4 @@
-# This was an in class assignment to create a basic ionic framework application.
+#### This was an in class assignment to add a controller and $scope variables to basic application.
 
 When the assignment is completed, you will have a basic application with a single view and a single controller. This is part two of the assignment, please see [Part One]() before going forward.
 
@@ -73,13 +73,6 @@ When including the `$scope` variables in the page, there is no need to include `
 </body>
 ````
 
-Now that the `app.js` file is created, we need to include the `app.js` file in the `index.html` file. This is accomplished by using the HTML script tag. Make the following edits to your `index.html` file, add this code right below the existing `script` tag that is in the `index.html` `<head>` tag.
-
-````HTML
-<!-- include the javascript app.js source file -->
-<script src="app.js"></script>
-````
-
 Final Source of Working Application
 ===
 `index.html`
@@ -95,7 +88,12 @@ Final Source of Working Application
     <!-- include the javascript app.js source file -->
     <script src="app.js"></script>
 </head>
-<body>
+<body ng-controller="FirstController"> <!-- ADDED ATTRIBUTE HERE -->
+   <p>this should display Aaron Saunders -   {{ name }}</p>
+   <p>
+   this should display Aaron -   {{ fullName.first }} <br/>
+   this should display Saunders -   {{ fullName.last }}
+   </p>
 </body>
 </html>
 ````
